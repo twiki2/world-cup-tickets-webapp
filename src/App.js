@@ -9,6 +9,8 @@ import ForgetPassword from "./components/forget-password";
 import BalancePage from "./components/BalancePage";
 
 
+import Signup from './components/Signup';
+import Login from './components/login';
 
 function App() {
   return (
@@ -18,11 +20,11 @@ function App() {
           <Navbar />
           <Routes>
             <Route path="/" element={<Shop />} />
-            <Route path="/contact" element={<Contact />} />
-            <Route path="/cart" element={<Cart/>} />
             <Route path='/forget-password' element={<ForgetPassword/>}/>
             <Route exact path="/balance" element={<BalancePage/>}/>
-
+            <Route path="/cart" element={<Cart />} />
+            <Route path='/Signup' element={<Signup/>} />
+            <Route path="/login" element={<Login/>} />
           </Routes>
         </Router>
       </ShopContextProvider>
