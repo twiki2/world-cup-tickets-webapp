@@ -7,8 +7,10 @@ export const Navbar = () => {
   return (
     <div className="navbar">
       <div className="links">
-        <Link to="/"> tickets </Link>
+        <Link to="/"> Tickets </Link>
         <Link to="/login">login </Link>
+        <Link to="/Signup"> Signup </Link>
+        <Link to="/script"> Search </Link>
         <Link to="/cart">
           <ShoppingCart size={32} />
         </Link>
