@@ -1,2 +1,2 @@
 # world-cup-tickets-webapp
-# A simple  world cup tickets reservation web project for course cs309
+# A simple  world cup ticket reservation web project for course cs309
