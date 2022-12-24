@@ -12,6 +12,7 @@ export const Navbar = () => {
         <Link to="/Signup"> Signup </Link>
         <Link to="/script"> Search </Link>
         <Link to="/cart">
+        <Link to="/Balance"> Balance </Link>
           <ShoppingCart size={32} />
         </Link>
       </div>
