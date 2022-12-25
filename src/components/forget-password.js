@@ -1,6 +1,7 @@
 import React from 'react'
 import { Grid,Paper, Avatar, TextField, Button, Typography,Link } from '@material-ui/core'
 import LockOutlinedIcon from '@material-ui/icons/LockOutlined';
+
 const Forget=()=>{
  
     const paperStyle={padding :20,height:'35vh',width:350, margin:"20px auto"}
