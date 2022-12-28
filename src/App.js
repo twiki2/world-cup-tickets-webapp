@@ -8,9 +8,9 @@ import { ShopContextProvider } from "./context/shop-context";
 import ForgetPassword from "./components/forget-password";
 import BalancePage from "./components/BalancePage";
 
-
 import Signup from './components/Signup';
 import Login from './components/login';
+import Reset from "./components/reset-password";
 
 function App() {
   return (
@@ -26,6 +26,8 @@ function App() {
             <Route path={ROUTES.CART} element={<Cart />} />
             <Route path={ROUTES.SIGN_UP} element={<Signup/>} />
             <Route path={ROUTES.LOG_IN} element={<Login/>} />
+            <Route path={ROUTES.RESET_PASSWORD} element={<Reset/>} />
+
           </Routes>
         </Router>
       </ShopContextProvider>
