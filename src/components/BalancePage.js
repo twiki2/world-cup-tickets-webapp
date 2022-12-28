@@ -2,6 +2,10 @@ import React from "react";
 import { useEffect, useState } from 'react';
 import { makeStyles } from '@material-ui/core/styles';
 import Typography from '@material-ui/core/Typography';
+import { useLocation, useNavigate } from 'react-router-dom';
+import { toast } from 'react-toastify';
+import { getError } from '../utils';
+
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -16,12 +20,19 @@ const useStyles = makeStyles((theme) => ({
 }));
 
 const BalancePage = () => {
+
+  const navigate = useNavigate();
+  const { search } = useLocation();
+  const redirectInUrl = new URLSearchParams(search).get('redirect');
+  const redirect = redirectInUrl ? redirectInUrl : '/';
+
+
   const classes = useStyles();
-  const [balance, setBalance] = useState(0);
+  const [balance, setBalance] = useState(5000);
 
   useEffect(() => {
     async function fetchBalance() {
-      const response = await fetch('/api/balance');
+      const response = await fetch('/api/users/balance');
       const data = await response.json();
       setBalance(data.balance);
     }

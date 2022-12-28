@@ -19,7 +19,7 @@ import product16 from "./assets/products/Match.jpeg";
 export const PRODUCTS = [
   {
     id: 1,
-    productName: "Match 1: Netherlands VS USA",
+    productName: "Match 1: Netherlands VS USA ",
     price: 200.0,
     productImage: product1,
   },

@@ -8,16 +8,18 @@ import { toast } from 'react-toastify';
 import { getError } from '../utils';
 
 const INITIAL_STATE = {
-    email: ""
+    password: "",
+    confirmPassword:""
   };
 
-const Forget=()=>{
+  const Reset = ()=>{
     const navigate = useNavigate();
     const { search } = useLocation();
     const redirectInUrl = new URLSearchParams(search).get('redirect');
     const redirect = redirectInUrl ? redirectInUrl : '/';
   
-    const [email, setEmail] = useState('');
+    const [password, setPassword] = useState('');
+    const [confirmPassword, setConfirmPassword] = useState('');
   
     const { userInfo } = React.useState(INITIAL_STATE);
   
@@ -26,8 +28,9 @@ const Forget=()=>{
       e.preventDefault();
   
       try { 
-        const { data } = await Axios.post('http://localhost:5000/api/users/forgot-password', {
-          email
+        const { data } = await Axios.post('http://localhost:5000/api/users/change-password', {
+          password,
+          confirmPassword,
         
         });
         navigate(redirect || '/');
@@ -40,20 +43,20 @@ const Forget=()=>{
         navigate(redirect); 
       }
     }, [navigate, redirect, userInfo]);
-
-
+   
     const paperStyle={padding :20,height:'35vh',width:350, margin:"20px auto"}
     const avatarStyle={backgroundColor:'#1bbd7e'}
     const btnstyle={margin:'8px 0'}
+
     return(
         <Grid>
             <Paper elevation={10} style={paperStyle}>
                 <Grid align='center'>
                      <Avatar style={avatarStyle}><LockOutlinedIcon/></Avatar>
-                    <h2>Forget password</h2>
+                    <h2>Reset password</h2>
                 </Grid>
-                <TextField label='Email' placeholder='Enter Email' fullWidth required  onChange={(e) => setEmail(e.target.value)} />
- 
+                <TextField label='Password' placeholder='Enter new password' fullWidth required  onChange={(e) => setPassword(e.target.value)}/>
+                <TextField label='confirmPassword' placeholder='Confirm new password' fullWidth required  onChange={(e) => setConfirmPassword(e.target.value)}/>
  
                 <Button type='submit' color='primary' variant="contained" style={btnstyle} fullWidth onClick={submitHandler} >reset password</Button>
  
@@ -61,5 +64,4 @@ const Forget=()=>{
         </Grid>
     )
 }
- 
-export default Forget
+export default Reset

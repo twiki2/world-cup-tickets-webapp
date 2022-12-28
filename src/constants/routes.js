@@ -8,3 +8,5 @@ export const BALANCE = '/balance';
 export const ADMIN = '/admin';
 export const ADMIN_DETAILS = '/admin/:id';
 export const FORGET_PASSWORD = '/forget-password';
+export const RESET_PASSWORD = '/reset-password';
+export const DETAILS ='/product-details';

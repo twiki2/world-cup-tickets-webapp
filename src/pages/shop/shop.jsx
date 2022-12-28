@@ -7,7 +7,7 @@ export const Shop = () => {
   return (
     <div className="shop">
       <div className="shopTitle">
-        <h1>FIFA WORLD CUP TICKETS QATAR 2022</h1>
+        <h1>FIFA WORLD CUP QATAR  2022 TICKETS  </h1>
       </div>
 
       <div className="products">
