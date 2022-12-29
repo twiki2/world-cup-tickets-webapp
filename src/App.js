@@ -7,6 +7,7 @@ import { Cart } from "./pages/cart/cart";
 import { ShopContextProvider } from "./context/shop-context";
 import ForgetPassword from "./components/forget-password";
 import BalancePage from "./components/BalancePage";
+import Search from "./components/Search"
 
 import Signup from './components/Signup';
 import Login from './components/login';
@@ -18,8 +19,8 @@ function App() {
       <BrowserRouter></BrowserRouter>
       <ShopContextProvider>
         <Router>
-          <Navbar />
-          <Routes>
+          <Navbar /> <Search/>
+          <Routes> 
             <Route exact path={ROUTES.LANDING} element={<Shop />} />
             <Route path={ROUTES.FORGET_PASSWORD} element={<ForgetPassword/>}/>
             <Route  path={ROUTES.BALANCE} element={<BalancePage/>}/>
