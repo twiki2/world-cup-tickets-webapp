@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { Grid , Paper , Avatar , TextField } from "@material-ui/core";
+import {  TextField } from "@material-ui/core";
 import { PRODUCTS } from "../products";
 const Search = ()=>{
 

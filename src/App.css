@@ -8,8 +8,8 @@
 body {
   padding: 0;
   margin: 0;
-  background-image: url('/public/index.jpg');
-  /* background-repeat: no-repeat; */
-  background-attachment: fixed;
-  background-size: 100% 100%; 
+  /* background-image: url('/public/index.jpg');
+  background-repeat: no-repeat;
+  /* background-attachment: fixed;
+  background-size: 100% 100%; */ 
 }

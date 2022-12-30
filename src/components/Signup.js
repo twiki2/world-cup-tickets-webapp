@@ -45,7 +45,7 @@ const Signup = () => {
       return;
     } 
     try {
-      const { data } = await Axios.post('http://localhost:5000/api/users/signup', {  
+      const { data } = await Axios.post('https://world-cup-tickets-nodejs-production.up.railway.app/api/users/signup', {  
         name,
         email,
         password,
@@ -77,8 +77,8 @@ const Signup = () => {
                     <Typography variant='caption' gutterBottom>Please fill this form to create an account !</Typography>
                 </Grid>
                 <form onSubmit={submitHandler}>
-                    <TextField fullWidth label='Name' placeholder="Enter your name"  name='name' value={name}   onChange={(e) => setName(e.target.value)} required />
-                    <TextField fullWidth label='Email' placeholder="Enter your email" name='email' value={email}  onChange={(e) => setEmail(e.target.value)} required />
+                    <TextField fullWidth label='Name' placeholder="Enter your name" type='text'  name='name' value={name}   onChange={(e) => setName(e.target.value)} required />
+                    <TextField fullWidth label='Email' placeholder="Enter your email" type='email' name='email' value={email}  onChange={(e) => setEmail(e.target.value)} required />
                     <FormControl component="fieldset" style={marginTop}>
                         <FormLabel component="legend">Gender</FormLabel>
                         <RadioGroup aria-label="gender" name="gender" style={{ display: 'initial' }}>
@@ -87,8 +87,8 @@ const Signup = () => {
                         </RadioGroup>
                     </FormControl>
                     {/* <TextField fullWidth label='Phone Number' placeholder="Enter your phone number" /> */}
-                    <TextField fullWidth label='Password' placeholder="Enter your password" name='password' value={password}  onChange={(e) => setPassword(e.target.value)} required/>
-                    <TextField fullWidth label='Confirm Password' placeholder="Confirm your password" name='confirmPassword' value={confirmPassword} onChange={(e) => setConfirmPassword(e.target.value)} required/>
+                    <TextField fullWidth label='Password' placeholder="Enter your password" type='password' name='password' value={password}  onChange={(e) => setPassword(e.target.value)} required/>
+                    <TextField fullWidth label='Confirm Password' placeholder="Confirm your password" type='password' name='confirmPassword' value={confirmPassword} onChange={(e) => setConfirmPassword(e.target.value)} required/>
                     <FormControlLabel
                         control={<Checkbox name="checkedA" />}
                         label="I accept the terms and conditions."

@@ -32,13 +32,18 @@ export  default function  Login () {
     e.preventDefault();
 
     try { 
-      const { data } = await Axios.post('http://localhost:5000/api/users/signin', {
+      const { data } = await Axios.post('https://world-cup-tickets-nodejs-production.up.railway.app/api/users/signin', {
         email,
         password,
       });
       navigate(redirect || '/');
     } catch (err) {
       toast.error(getError(err));
+      return(
+        <div>
+          <TextField>Your email or password is wrong</TextField>
+        </div>
+      ) 
     }
   };
   useEffect(() => { 
@@ -57,7 +62,7 @@ export  default function  Login () {
                     <h2>Sign In</h2>
                 </Grid >
                 
-                <TextField label='Username' placeholder='Enter username' fullWidth  name='email' value={email} onChange={(e) => setEmail(e.target.value)} required/>
+                <TextField label='Username' placeholder='Enter username'  type='email' fullWidth  name='email' value={email} onChange={(e) => setEmail(e.target.value)} required/>
                 <TextField label='Password' placeholder='Enter password' type='password' fullWidth  name='password' value={password} onChange={(e) => setPassword(e.target.value)} required/>
                 <FormControlLabel
                     control={

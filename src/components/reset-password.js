@@ -28,13 +28,14 @@ const INITIAL_STATE = {
       e.preventDefault();
   
       try { 
-        const { data } = await Axios.post('http://localhost:5000/api/users/change-password', {
+        const { data } = await Axios.post('https://world-cup-tickets-nodejs-production.up.railway.app/api/users/change-password', {
           password,
           confirmPassword,
         
         });
         navigate(redirect || '/');
       } catch (err) {
+
         toast.error(getError(err));
       }
     };

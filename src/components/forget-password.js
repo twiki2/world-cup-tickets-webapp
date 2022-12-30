@@ -26,7 +26,7 @@ const Forget=()=>{
       e.preventDefault();
   
       try { 
-        const { data } = await Axios.post('http://localhost:5000/api/users/forgot-password', {
+        const { data } = await Axios.post('https://world-cup-tickets-nodejs-production.up.railway.app/api/users/forgot-password', {
           email
         
         });
