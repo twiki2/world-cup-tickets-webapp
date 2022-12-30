@@ -32,7 +32,7 @@ const BalancePage = () => {
 
   useEffect(() => {
     async function fetchBalance() {
-      const response = await fetch('https://world-cup-tickets-nodejs-production.up.railway.app/api/users/balance');
+      const response = await fetch('/api/users/balance');
       const data = await response.json();
       setBalance(data.balance);
     }
